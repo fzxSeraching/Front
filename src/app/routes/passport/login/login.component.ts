@@ -32,6 +32,8 @@ export class UserLoginComponent implements OnDestroy {
     this.form = fb.group({
       userName: [null, [Validators.required, Validators.pattern(/^(admin|user)$/)]],
       password: [null, [Validators.required, Validators.pattern(/^(ng\-alain\.com)$/)]],
+      email: [null, [Validators.required, Validators.pattern(/^[a-zA-Z0-9]+@[a-zA-Z0-9]+(\.[a-zA-Z]+)+$/)]],
+      pws: [null, [Validators.required, Validators.min(6)]],
       mobile: [null, [Validators.required, Validators.pattern(/^1\d{10}$/)]],
       captcha: [null, [Validators.required]],
       remember: [true],
@@ -42,6 +44,12 @@ export class UserLoginComponent implements OnDestroy {
 
   get userName() {
     return this.form.controls.userName;
+  }
+  get email() {
+    return this.form.controls.email;
+  }
+  get pws() {
+    return this.form.controls.pws;
   }
   get password() {
     return this.form.controls.password;

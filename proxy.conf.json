@@ -1,2 +1,6 @@
 {
-}
+    "/api": {
+      "target": "http://www.lab.com/",
+      "secure": false
+    }
+  }
